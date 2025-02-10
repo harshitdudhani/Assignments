@@ -1,0 +1,35 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+import java.util.Scanner;
+
+public class CaseConverter {
+   public CaseConverter() {
+   }
+
+   public static void main(String[] var0) {
+      Scanner var1 = new Scanner(System.in);
+      System.out.print("Enter a string: ");
+      String var2 = var1.nextLine();
+      String var3 = convertCase(var2);
+      System.out.println("Converted string: " + var3);
+      var1.close();
+   }
+
+   public static String convertCase(String var0) {
+      StringBuilder var1 = new StringBuilder();
+      char[] var2 = var0.toCharArray();
+      int var3 = var2.length;
+
+      for(int var4 = 0; var4 < var3; ++var4) {
+         char var5 = var2[var4];
+         if (Character.isUpperCase(var5)) {
+            var1.append(Character.toLowerCase(var5));
+         } else if (Character.isLowerCase(var5)) {
+            var1.append(Character.toUpperCase(var5));
+         } else {
+            var1.append(var5);
+         }
+      }
+
+      return var1.toString();
+   }
+}
